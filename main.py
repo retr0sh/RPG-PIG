@@ -112,13 +112,11 @@ class Enemy:
             self.available_images.extend(glob.glob(f"Pig{i}"))
             self.available_images.extend(glob.glob(f"PIG{i}"))
 
-        # Если не нашли изображения с pig в названии, ищем любые изображения
         if not self.available_images:
             for i in image_extensions:
                 self.available_images.extend(glob.glob(f"*{i}"))
 
     def randomize_appearance(self):
-        # Случайное имя
         self.name = random.choice(self.possible_names)
 
         # Случайное изображение
@@ -402,7 +400,7 @@ freeze_button.place(x=190, y=340)
 escape_button = Button(window, text="escape", bg='black', fg='red', command=escape, )
 escape_button.place(x=238, y=340)
 
-# Загружаем начальное изображение
+# загрузко начального изображения
 update_enemy_image()
 update_ui()
 
